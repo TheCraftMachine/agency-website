@@ -1,26 +1,185 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+/* ─── Design tokens ───────────────────────────────────────────────── */
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Surfaces */
+    --surface-light:      #F4EDE6;
+    --surface-light-alt:  #EDE5DC;
+    --surface-dark:       #18120D;
+    --surface-dark-alt:   #221A13;
+
+    /* Text */
+    --text-primary:       #18120D;
+    --text-secondary:     #6B5D52;
+    --text-inverse:       #F4EDE6;
+    --text-muted-inv:     #8B7A6E;
+
+    /* Orange accent */
+    --primary:            #E8420D;
+    --primary-hover:      #C93608;
+    --primary-active:     #A82D06;
+    --primary-light:      #FF6B3D;
+    --primary-tint:       rgba(232, 66, 13, 0.10);
+
+    /* Borders */
+    --border:             rgba(24, 18, 13, 0.12);
+    --border-strong:      rgba(24, 18, 13, 0.28);
+    --border-dark:        rgba(244, 237, 230, 0.12);
+    --border-dark-strong: rgba(244, 237, 230, 0.28);
+
+    /* Typography */
+    --font-display: 'Clash Display', sans-serif;
+    --font-body:    'Satoshi', sans-serif;
+
+    /* Fluid type scale */
+    --text-xs:       clamp(0.694rem,  0.65rem  + 0.22vw, 0.75rem);
+    --text-sm:       clamp(0.833rem,  0.78rem  + 0.27vw, 0.938rem);
+    --text-base:     clamp(1rem,      0.94rem  + 0.32vw, 1.125rem);
+    --text-md:       clamp(1.125rem,  1.05rem  + 0.38vw, 1.313rem);
+    --text-lg:       clamp(1.25rem,   1.15rem  + 0.5vw,  1.5rem);
+    --text-xl:       clamp(1.5rem,    1.3rem   + 1vw,    2rem);
+    --text-2xl:      clamp(2rem,      1.6rem   + 2vw,    2.75rem);
+    --text-3xl:      clamp(2.5rem,    1.9rem   + 3vw,    3.75rem);
+    --text-4xl:      clamp(3.5rem,    2.5rem   + 5vw,    6rem);
+    --text-display:  clamp(5rem,      3.5rem   + 7.5vw,  9rem);
+
+    /* Leading */
+    --leading-tight:  0.95;
+    --leading-snug:   1.1;
+    --leading-normal: 1.5;
+    --leading-loose:  1.7;
+
+    /* Tracking */
+    --tracking-tight:  -0.03em;
+    --tracking-snug:   -0.02em;
+    --tracking-normal: -0.01em;
+    --tracking-wide:    0.08em;
+    --tracking-wider:   0.12em;
+
+    /* Spacing */
+    --space-1: 4px;   --space-2: 8px;   --space-3: 12px;  --space-4: 16px;
+    --space-5: 24px;  --space-6: 32px;  --space-7: 48px;  --space-8: 64px;
+    --space-9: 96px;  --space-10: 128px; --space-11: 160px; --space-12: 200px;
+
+    --section-gap:   clamp(80px, 10vw, 160px);
+    --section-inset: clamp(24px, 5vw, 80px);
+    --grid-max:      1440px;
+    --grid-gutter:   clamp(16px, 2vw, 24px);
+
+    /* Radius */
+    --radius-sm:   4px;
+    --radius-md:   8px;
+    --radius-lg:   16px;
+    --radius-pill: 100px;
+    --radius-full: 9999px;
+
+    /* Easing */
+    --ease-out-quart:   cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out-sine: cubic-bezier(0.37, 0, 0.63, 1);
+    --ease-in-quart:    cubic-bezier(0.5, 0, 0.75, 0);
+    --ease-spring:      cubic-bezier(0.34, 1.3, 0.64, 1);
+    --ease-cinematic:   cubic-bezier(0.76, 0, 0.24, 1);
+
+    /* Duration */
+    --dur-instant:   100ms;
+    --dur-fast:      200ms;
+    --dur-base:      400ms;
+    --dur-slow:      700ms;
+    --dur-cinematic: 1200ms;
+
+    /* Shadows (warm-tinted) */
+    --shadow-sm: 0 1px 3px rgba(24, 18, 13, 0.08), 0 1px 2px rgba(24, 18, 13, 0.06);
+    --shadow-md: 0 4px 16px rgba(24, 18, 13, 0.10), 0 2px 6px rgba(24, 18, 13, 0.06);
+    --shadow-lg: 0 8px 32px rgba(24, 18, 13, 0.12), 0 4px 12px rgba(24, 18, 13, 0.08);
+
+    /* shadcn-compatible vars */
+    --background:          var(--surface-light);
+    --foreground:          var(--text-primary);
+    --card:                var(--surface-light-alt);
+    --card-foreground:     var(--text-primary);
+    --primary-shadcn:      var(--primary);
+    --primary-foreground:  #fff;
+    --border-shadcn:       var(--border);
+    --ring:                var(--primary);
+    --radius:              var(--radius-md);
+  }
+
+  [data-theme="dark"] {
+    --surface-light:     #18120D;
+    --surface-light-alt: #221A13;
+    --text-primary:      #F4EDE6;
+    --text-secondary:    #8B7A6E;
+    --border:            rgba(244, 237, 230, 0.12);
+    --border-strong:     rgba(244, 237, 230, 0.28);
+    --background:        var(--surface-dark);
+    --foreground:        var(--text-inverse);
+    --primary-tint:      rgba(232, 66, 13, 0.15);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─── Base resets ─────────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--text-primary);
+    background: var(--surface-dark);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  p { line-height: var(--leading-normal); }
+
+  a { color: inherit; text-decoration: none; }
+
+  img, video { display: block; max-width: 100%; }
+
+  /* Reduce motion globally for all CSS animations */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ─── Tailwind v4 theme extension ─────────────────────────────────── */
+@theme {
+  --color-surface-light:     var(--surface-light);
+  --color-surface-light-alt: var(--surface-light-alt);
+  --color-surface-dark:      var(--surface-dark);
+  --color-surface-dark-alt:  var(--surface-dark-alt);
+  --color-primary:           var(--primary);
+  --color-primary-hover:     var(--primary-hover);
+  --color-primary-active:    var(--primary-active);
+  --color-primary-light:     var(--primary-light);
+  --color-text-primary:      var(--text-primary);
+  --color-text-secondary:    var(--text-secondary);
+  --color-text-inverse:      var(--text-inverse);
+  --color-text-muted-inv:    var(--text-muted-inv);
+
+  --font-display: var(--font-display);
+  --font-body:    var(--font-body);
+
+  --spacing-section: var(--section-gap);
+  --spacing-inset:   var(--section-inset);
+
+  --radius-sm:   var(--radius-sm);
+  --radius-md:   var(--radius-md);
+  --radius-lg:   var(--radius-lg);
+  --radius-pill: var(--radius-pill);
+  --radius-full: var(--radius-full);
 }

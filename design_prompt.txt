@@ -1,0 +1,117 @@
+I'm not a designer. I'll give you reference screenshots and URLs of sites I love.
+Your job: analyze them deeply and generate a complete @docs/design-system.md
+that captures their visual DNA — so we can build something with the same feel
+but original and unique to TheCraftMachine.
+
+---
+
+## Context & Brand
+
+**TheCraftMachine** is a web agency. The brand name implies precision, craft, and mechanical creativity.
+The design must feel premium, confident, and memorable — not a generic template.
+
+**Primary brand color: orange.**
+Use it as the single dominant accent. All other colors are neutral.
+No gradients on buttons or CTAs — solid orange only.
+
+---
+
+## Sites to Analyze
+
+Reference 1: https://www.tomcardermedia.com/
+@screenshots/project_display.png that shows a good examples to display client's website we built and we can scroll over it without scrolling the page, it just smoothly goes to the next one with a transition
+also we can see that the background color changes between two different section just while scrloling @screenshots/white_color.png and @screenshots/black_color.png
+Moreover we can see on those screen that the design is clean, simple but professional with a really simple menu @screenshots/menu.png
+I really like the fact that the content scroll but not the page itself in different section, and the page starts scrolling again when we reached the end of the content
+
+For each URL/screenshot, extract:
+
+- **Typography**: font personality (editorial/technical/expressive), weight contrast,
+  size hierarchy, display vs. body font roles
+- **Color mood**: warm/cool, contrast level, how accent color is used (sparingly vs. loudly)
+- **Spacing rhythm**: dense or airy, section padding, whitespace philosophy
+- **Layout patterns**: grid structure, alignment (centered vs. left-aligned), asymmetry
+- **Motion DNA**: based on visual composition and what kind of movement would feel native
+  (fast/snappy, slow/cinematic, scroll-driven, springy)
+
+---
+
+## Required Design Features
+
+These are non-negotiable. Derive the implementation style from the references,
+but include all of them in the design system:
+
+### 1. Scroll-Controlled Video
+A video that is controlled entirely by scroll position.
+- When the user scrolls down, the video plays forward
+- When the user scrolls up, the video rewinds
+- Specify: timing (which scroll range triggers which video segment),
+  easing behavior, and performance guidance (requestAnimationFrame, not scroll events directly)
+
+### 2. Opening Animation (Site Entrance)
+A fast but smooth intro animation that plays when the site loads.
+- Duration: under 1.5 seconds total
+- Should feel cinematic but not heavy
+- Define exactly what animates (logo reveal, text entrance, curtain/mask wipe, etc.)
+  based on the reference sites' visual language
+- Must respect `prefers-reduced-motion`
+
+### 3. Scroll-Triggered Animations (General)
+Define the standard scroll reveal behavior for all page sections:
+- Animation type (clip-path reveal, fade+translate, scale, etc.)
+- Duration, easing, stagger values
+- When to trigger (% in viewport)
+- Implementation: use GSAP ScrollTrigger or native IntersectionObserver
+
+---
+
+## Design System Output
+
+Generate @docs/design-system.md with:
+
+### Tokens
+- Complete CSS custom properties for color, typography, spacing, radius, shadow, transitions
+- Orange as `--color-primary` with hover/active/highlight states in light AND dark mode
+- Neutral warm surfaces (not pure white/black)
+- Full light + dark mode palette
+
+### Typography
+- Recommend a specific display font + body font pairing (from Fontshare preferred, or Google Fonts)
+  that matches the reference sites' feel
+- Fluid type scale using `clamp()` for all size tokens
+- Clear rules: which font at which size (display font only at 24px+)
+
+### Layout
+- Grid system (column count, gutter, max-width containers)
+- Section spacing rhythm derived from references
+- Mobile-first breakpoints
+
+### Motion System
+- Easing curves as CSS custom properties
+- Named animation presets (entrance, hover, scroll-reveal, exit)
+- Duration scale (fast: ?ms, base: ?ms, slow: ?ms)
+- GSAP-specific settings if using GSAP
+
+### Component Patterns
+- Primary button, ghost button (with orange accent)
+- Card anatomy (border, radius, shadow philosophy)
+- Navigation pattern (sticky or not, scroll behavior)
+- Hero section structure
+
+### Animation Implementation Guide
+Provide ready-to-use code snippets for:
+- The scroll-controlled video (GSAP ScrollTrigger preferred)
+- The site entrance animation
+- Standard scroll-reveal for sections
+
+---
+
+## Rules
+
+- Do NOT start from a generic template — derive everything from the references
+- Do NOT use purple, violet, blue-to-purple gradients, glowing orbs, or neon blobs
+- Do NOT center everything — default to left-aligned, center only for hero moments
+- Do NOT use icons in colored circles as section decorations
+- Do NOT generate placeholder copy like "Unlock the power of..." — use brand-specific language
+- Ask me nothing. Make confident design decisions based on the references.
+- If references conflict, pick the direction that best fits a premium web agency with orange as identity

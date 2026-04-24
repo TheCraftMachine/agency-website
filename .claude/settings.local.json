@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.tomcardermedia.com)",
+      "Bash(npx create-next-app@latest *)",
+      "Bash(mkdir -p /tmp/tcm-backup)",
+      "Bash(mv animations *)",
+      "Bash(mv CLAUDE.md /tmp/tcm-backup/)",
+      "Bash(npx shadcn@latest *)",
+      "Bash(npx shadcn@4.4.0 init)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(python3 *)",
+      "Bash(node -e ' *)",
+      "Bash(node *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/work)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/about)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/contact)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/work/maison-verdier)",
+      "Bash(curl -s http://localhost:3001/)",
+      "Bash(curl -s http://localhost:3001/work)",
+      "Bash(curl -s http://localhost:3001/about)"
+    ]
+  },
+  "enabledPlugins": {
+    "firecrawl@claude-plugins-official": true
+  }
+}
