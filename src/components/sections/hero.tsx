@@ -4,15 +4,15 @@ import Image from 'next/image';
 export function Hero() {
   return (
     <section
-      data-bg="#18120D"
-      data-text="#F4EDE6"
+      data-bg="#F4EDE6"
+      data-text="#18120D"
       style={{
-        minHeight:  '100svh',
-        display:    'flex',
-        alignItems: 'flex-end',
+        minHeight:   '100svh',
+        display:     'flex',
+        alignItems:  'flex-end',
         paddingBottom: 'var(--space-10)',
-        background: 'var(--surface-dark)',
-        color:      'var(--text-inverse)',
+        background:  'var(--surface-light)',
+        color:       'var(--text-primary)',
       }}
     >
       <div style={{ width: '100%', maxWidth: 'var(--grid-max)', marginInline: 'auto', paddingInline: 'var(--section-inset)' }}>
@@ -42,6 +42,7 @@ export function Hero() {
             lineHeight:    'var(--leading-tight)',
             letterSpacing: 'var(--tracking-tight)',
             marginBottom:  'var(--space-7)',
+            overflowWrap:  'break-word',
           }}
         >
           We build{' '}
@@ -100,7 +101,7 @@ export function Hero() {
           style={{
             fontSize:     'var(--text-lg)',
             lineHeight:   'var(--leading-normal)',
-            color:        'var(--text-muted-inv)',
+            color:        'var(--text-secondary)',
             maxWidth:     '44ch',
             marginBottom: 'var(--space-7)',
           }}
@@ -147,13 +148,13 @@ export function Hero() {
               textTransform:  'uppercase',
               padding:        'var(--space-4) var(--space-6)',
               background:     'transparent',
-              color:          'var(--text-inverse)',
-              border:         '1px solid var(--border-dark-strong)',
+              color:          'var(--text-primary)',
+              border:         '1px solid var(--border-strong)',
               borderRadius:   'var(--radius-pill)',
               textDecoration: 'none',
               transition:     'border-color 200ms, color 200ms',
             }}
-            className="hover:border-[--primary-light] hover:text-[--primary-light]"
+            className="hover:border-[--primary] hover:text-[--primary]"
           >
             Start a project
           </Link>

@@ -24,7 +24,7 @@ export function useScrollVideo(
       trigger: section,
       start: 'top top',
       end: 'bottom bottom',
-      scrub: 1.5,
+      scrub: 0.1,
       onUpdate(self) {
         if (!video.duration) return;
         video.currentTime = self.progress * video.duration;

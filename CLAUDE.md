@@ -43,7 +43,7 @@ Commandes : `npm run dev` · `npm run build` · `npx tsc --noEmit`
 ## Structure du site
 
 ```
-/              → Hero + ScrollVideo + PortfolioReel + Services + AboutTeaser + Testimonials + ContactCTA
+/              → Hero + PortfolioReel + Services + AboutTeaser + Testimonials + ContactCTA
 /work          → Grille de tous les projets (6 projets)
 /work/[slug]   → Case study individuel — 6 paths SSG via generateStaticParams
 /about         → Histoire de l'agence + valeurs
@@ -60,7 +60,7 @@ src/
 ├── app/
 │   ├── globals.css              ← TOUS les tokens CSS + @theme Tailwind v4
 │   ├── layout.tsx               ← Root layout : Fontshare, EntranceCurtain, SiteNav, SiteFooter
-│   ├── page.tsx                 ← Homepage : 7 sections + ColorMorphWatcher
+│   ├── page.tsx                 ← Homepage : 6 sections + ColorMorphWatcher (ScrollVideo commenté)
 │   ├── about/page.tsx           ← Server component, multi-sections + ColorMorphWatcher
 │   ├── contact/page.tsx         ← CLIENT component ('use client'), formulaire fictif
 │   └── work/
@@ -74,9 +74,9 @@ src/
 │   │   ├── site-nav.tsx         ← Nav fixe blend-mode (client, useState pour mobile)
 │   │   └── site-footer.tsx      ← Footer (server)
 │   ├── sections/                ← Une section = un fichier
-│   │   ├── hero.tsx             ← Server
-│   │   ├── scroll-video.tsx     ← Client (GSAP + useScrollVideo hook)
-│   │   ├── portfolio-reel.tsx   ← Client (GSAP pinned scroll)
+│   │   ├── hero.tsx             ← Server — fond BEIGE (#F4EDE6), texte sombre
+│   │   ├── scroll-video.tsx     ← Client (GSAP + useScrollVideo hook) — NON UTILISÉ (commenté dans page.tsx)
+│   │   ├── portfolio-reel.tsx   ← Client — card statique, affiche featuredProjects[0]
 │   │   ├── services.tsx         ← Server (RevealText/RevealBlock sont clients)
 │   │   ├── about-teaser.tsx     ← Server
 │   │   ├── testimonials.tsx     ← Client (useState pour rotation)
@@ -277,7 +277,8 @@ style={{ color: '#E8420D' }}
 
 | Section | `data-bg` | `data-text` |
 |---|---|---|
-| Hero, ScrollVideo, PortfolioReel, AboutTeaser, ContactCTA, Footer | `#18120D` | `#F4EDE6` |
+| Hero, PortfolioReel | `#F4EDE6` | `#18120D` |
+| ScrollVideo (désactivé), AboutTeaser, ContactCTA, Footer | `#18120D` | `#F4EDE6` |
 | Services | `#F4EDE6` | `#18120D` |
 | Testimonials | `#EDE5DC` | `#18120D` |
 
@@ -320,8 +321,7 @@ export function MySection() {
 ### Bloquant (site non présentable sans ça)
 
 - [ ] **Vraies images** — remplacer les placeholders dans `public/projects/*/cover.jpg` et `public/images/hero-thumb-{1,2}.jpg`
-- [ ] **Vidéo ScrollVideo** — déposer `public/video/scroll-hero.mp4` (+ `.webm` + `-poster.jpg`)
-- [ ] **Vidéos PortfolioReel** — déposer les `reel.mp4` pour les 3 projets featured
+- [ ] **Vidéo ScrollVideo** — déposer `public/video/scroll-hero.mp4` (+ `.webm` + `-poster.jpg`) — section commentée pour l'instant
 - [ ] **Vrai contenu** — remplacer les textes fictifs dans `data/projects.ts`, `data/services.ts`, et les copies hardcodées dans les sections (ex. "Web Agency — Paris", "From strategy to screen…", les valeurs dans contact/page.tsx)
 
 ### Fonctionnel
@@ -332,6 +332,7 @@ export function MySection() {
 
 ### Améliorations
 
+- [ ] **PortfolioReel multi-projets** — actuellement affiche seulement `featuredProjects[0]`. À reconstruire pour swiper entre les 3 featured (billboard vertical ou autre) une fois le design validé sur le premier projet.
 - [ ] **Case study enrichi** — `app/work/[slug]/page.tsx` affiche cover + meta + texte. Ajouter galerie d'images, métriques, quote client selon le contenu réel. Prévoir un champ `images: string[]` dans le type `Project`
 - [ ] **SEO complet** — ajouter `openGraph`, `twitter`, `canonical` dans les `generateMetadata` de chaque page
 - [ ] **Favicon** — remplacer `src/app/favicon.ico` par le logo TCM
