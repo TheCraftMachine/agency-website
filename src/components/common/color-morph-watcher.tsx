@@ -5,18 +5,19 @@ import { gsap, ScrollTrigger } from '@/lib/gsap';
 export function ColorMorphWatcher() {
   useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>('[data-bg]');
+    const triggers: ReturnType<typeof ScrollTrigger.create>[] = [];
 
     sections.forEach((section) => {
       const bg   = section.dataset.bg!;
       const text = section.dataset.text!;
 
-      ScrollTrigger.create({
+      triggers.push(ScrollTrigger.create({
         trigger: section,
         start:   'top 55%',
         end:     'bottom 45%',
         onEnter:     () => morph(bg, text),
         onEnterBack: () => morph(bg, text),
-      });
+      }));
     });
 
     function morph(bg: string, text: string) {
@@ -29,7 +30,7 @@ export function ColorMorphWatcher() {
       });
     }
 
-    return () => ScrollTrigger.getAll().forEach(t => t.kill());
+    return () => triggers.forEach(t => t.kill());
   }, []);
 
   return null;

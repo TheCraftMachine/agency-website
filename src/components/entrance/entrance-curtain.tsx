@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import { gsap } from '@/lib/gsap';
 
@@ -7,13 +7,14 @@ export function EntranceCurtain() {
   const curtainRef = useRef<HTMLDivElement>(null);
   const logoRef    = useRef<HTMLDivElement>(null);
   const reduced    = useReducedMotion();
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const curtain = curtainRef.current;
     const logo    = logoRef.current;
 
     if (reduced || !curtain || !logo) {
-      curtain?.remove();
+      setVisible(false);
       return;
     }
 
@@ -29,7 +30,7 @@ export function EntranceCurtain() {
         yPercent: -100,
         duration: 0.5,
         ease: 'power4.inOut',
-        onComplete: () => curtain.remove(),
+        onComplete: () => setVisible(false),
       })
       .fromTo(heroReveals,
         { opacity: 0, yPercent: 5 },
@@ -37,6 +38,8 @@ export function EntranceCurtain() {
         '-=0.25'
       );
   }, [reduced]);
+
+  if (!visible) return null;
 
   return (
     <div
