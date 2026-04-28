@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { SiteNav }         from '@/components/layout/site-nav';
-import { SiteFooter }      from '@/components/layout/site-footer';
+import { SiteNav } from '@/components/layout/site-nav';
+import { SiteFooter } from '@/components/layout/site-footer';
 import { EntranceCurtain } from '@/components/entrance/entrance-curtain';
+import { NextIntlClientProvider } from 'next-intl';
 
 export const metadata: Metadata = {
-  title:       'TheCraftMachine — Web Agency',
+  title: 'TheCraftMachine — Web Agency',
   description: 'We build digital machines that move people. Web design, brand identity, and film from Paris.',
 };
 
@@ -22,7 +23,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <EntranceCurtain />
         <SiteNav />
-        <main>{children}</main>
+        <main>
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        </main>
         <SiteFooter />
       </body>
     </html>
