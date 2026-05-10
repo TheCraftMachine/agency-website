@@ -74,7 +74,7 @@ src/
 │   │   ├── site-nav.tsx         ← Nav fixe blend-mode (client, useState pour mobile)
 │   │   └── site-footer.tsx      ← Footer (server)
 │   ├── sections/                ← Une section = un fichier
-│   │   ├── hero.tsx             ← Server — fond BEIGE (#F4EDE6), texte sombre
+│   │   ├── hero.tsx             ← Client ('use client', GSAP) — fond BEIGE (#F4EDE6), sweep reveal + engrenage
 │   │   ├── scroll-video.tsx     ← Client (GSAP + useScrollVideo hook) — NON UTILISÉ (commenté dans page.tsx)
 │   │   ├── portfolio-reel.tsx   ← Client — card statique, affiche featuredProjects[0]
 │   │   ├── services.tsx         ← Server (RevealText/RevealBlock sont clients)
@@ -117,9 +117,8 @@ src/
 
 `EntranceCurtain` recherche les éléments `.hero-reveal` dans le DOM via `document.querySelectorAll('.hero-reveal')` et les anime (opacity 0→1, yPercent 5→0) après le wipe du rideau.
 
-Dans `hero.tsx`, 4 éléments portent cette classe :
+Dans `hero.tsx`, **3 éléments** portent cette classe (le `<h1>` a sa propre animation GSAP, il n'utilise pas `.hero-reveal`) :
 - Le label "Web Agency — Paris" (`<span>`)
-- Le `<h1>` (titre display)
 - Le `<p>` (accroche)
 - Le `<div>` des boutons CTA
 
@@ -137,9 +136,13 @@ Chaque `PortfolioItem` rend un `<div className="portfolio-item">`. Si tu renomme
 
 Le héro utilise `minHeight: '100svh'` (small viewport height). Sur mobile, `svh` exclut la barre d'adresse du navigateur — `100vh` aurait causé un débordement. Ne pas changer en `100vh`.
 
-### Images inline dans le héro : implémentation directe
+### Animation du héro : sweep reveal + engrenage
 
-Le fichier `src/components/common/inline-media.tsx` existe mais **n'est pas utilisé dans le héro**. Les deux images inline (`/images/hero-thumb-1.jpg` et `/images/hero-thumb-2.jpg`) sont implémentées directement dans `hero.tsx` avec des `<span style={{ position: 'relative', ... }}><Image fill /></span>`. Pour modifier ces images inline, éditer `hero.tsx` directement.
+Le `<h1>` est révélé via un `clip-path: inset(0 100% 0 0)` → `inset(0 0% 0 0)` animé par GSAP (1.8s, `power2.inOut`). En parallèle, l'engrenage (`/images/logo-2-removebg-preview.png`) se déplace de la gauche vers la droite sur le même timing et tourne de 720°, puis disparaît en fondu. La timeline démarre avec un `delay: 1.0` pour se caler après la fin du rideau d'entrée.
+
+Le `<h1>` n'a **pas** la classe `.hero-reveal` — son animation est gérée indépendamment dans le `useEffect` de `hero.tsx`.
+
+Le fichier `src/components/common/inline-media.tsx` existe mais n'est pas utilisé. Les anciennes images inline (`hero-thumb-1.jpg`, `hero-thumb-2.jpg`) ne sont plus utilisées dans le héro.
 
 ### Boutons : inline styles, pas le composant `Button`
 

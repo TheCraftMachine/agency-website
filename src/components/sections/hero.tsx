@@ -1,10 +1,52 @@
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
+import { useReducedMotion } from '@/hooks/use-reduced-motion';
+import { gsap } from '@/lib/gsap';
+
+const GEAR_SIZE = 200;
 
 export function Hero() {
-
   const t = useTranslations('Hero');
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const gearRef = useRef<HTMLSpanElement>(null);
+  const reduced = useReducedMotion();
+
+  useEffect(() => {
+    if (reduced || !headingRef.current || !gearRef.current) return;
+
+    const heading = headingRef.current;
+    const gear = gearRef.current;
+
+    const ctx = gsap.context(() => {
+      const headingW = heading.offsetWidth;
+      const gearW = gear.offsetWidth || GEAR_SIZE;
+
+      // Place gear at the left boundary, vertically centred, before the reveal starts
+      gsap.set(gear, { x: -gearW / 2, yPercent: -50, rotation: 0, opacity: 1 });
+
+      const tl = gsap.timeline({ delay: 1.2 });
+
+      // Clip-path sweeps right → reveals text left-to-right
+      tl.fromTo(
+        heading,
+        { clipPath: 'inset(0 100% 0 0)' },
+        { clipPath: 'inset(0 0% 0 0)', duration: 1.8, ease: 'power2.inOut' }
+      );
+
+      // Gear rolls across at the exact same pace, then fades out
+      tl.to(
+        gear,
+        { x: headingW + gearW / 2, rotation: 720, duration: 1.8, ease: 'power2.inOut' },
+        0
+      );
+      tl.to(gear, { opacity: 0, duration: 0.3, ease: 'power1.out' });
+    });
+
+    return () => ctx.revert();
+  }, [reduced]);
 
   return (
     <section
@@ -37,58 +79,44 @@ export function Hero() {
           {t('label')}
         </span>
 
-        <h1
-          className="hero-reveal"
-          style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'var(--text-display)',
-            fontWeight: 700,
-            lineHeight: 'var(--leading-tight)',
-            letterSpacing: 'var(--tracking-tight)',
-            marginBottom: 'var(--space-7)',
-            overflowWrap: 'break-word',
-          }}
-        >
-          {t.rich('heading', {
-            img1: () => (
-              <span
-                aria-hidden="true"
-                style={{
-                  display: 'inline-block',
-                  width: 'clamp(80px, 11vw, 156px)',
-                  height: 'clamp(48px, 6.5vw, 96px)',
-                  borderRadius: 'var(--radius-md)',
-                  overflow: 'hidden',
-                  verticalAlign: 'middle',
-                  marginInline: '0.15em',
-                  transform: 'translateY(-0.08em)',
-                  position: 'relative',
-                }}
-              >
-                <Image src="/images/hero-thumb-1.jpg" alt="" fill sizes="(max-width: 768px) 80px, 156px" className="object-cover" />
-              </span>
-            ),
-            img2: () => (
-              <span
-                aria-hidden="true"
-                style={{
-                  display: 'inline-block',
-                  width: 'clamp(80px, 11vw, 156px)',
-                  height: 'clamp(48px, 6.5vw, 96px)',
-                  borderRadius: 'var(--radius-md)',
-                  overflow: 'hidden',
-                  verticalAlign: 'middle',
-                  marginInline: '0.15em',
-                  transform: 'translateY(-0.08em)',
-                  position: 'relative',
-                }}
-              >
-                <Image src="/images/hero-thumb-2.jpg" alt="" fill sizes="(max-width: 768px) 80px, 156px" className="object-cover" />
-              </span>
-            ),
-            br: () => <br />,
-          })}
-        </h1>
+        {/* Wrapper needed so the absolutely-positioned gear is scoped to the heading bounds */}
+        <div style={{ position: 'relative', marginBottom: 'var(--space-7)' }}>
+          <h1
+            ref={headingRef}
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'var(--text-display)',
+              fontWeight: 700,
+              lineHeight: 'var(--leading-tight)',
+              letterSpacing: 'var(--tracking-tight)',
+              overflowWrap: 'break-word',
+            }}
+          >
+            {t('heading')}
+          </h1>
+
+          <span
+            ref={gearRef}
+            aria-hidden="true"
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: 0,
+              width: GEAR_SIZE,
+              height: GEAR_SIZE,
+              pointerEvents: 'none',
+              zIndex: 1,
+            }}
+          >
+            <Image
+              src="/images/logo.png"
+              alt=""
+              fill
+              sizes={`${GEAR_SIZE}px`}
+              className="object-contain"
+            />
+          </span>
+        </div>
 
         <p
           className="hero-reveal"
