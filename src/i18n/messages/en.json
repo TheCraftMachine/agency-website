@@ -1,7 +1,7 @@
 {
   "Meta": {
     "site": {
-      "title": "TheCraftMachine — Web Agency",
+      "title": "TheCraftMachine",
       "description": "We build digital machines that move people. Web design, brand identity, and film from Paris."
     },
     "about": {
@@ -13,7 +13,6 @@
       "description": "Web design, brand identity, and film projects by TheCraftMachine."
     }
   },
-
   "Nav": {
     "homeAriaLabel": "TheCraftMachine home",
     "primaryAriaLabel": "Primary",
@@ -23,7 +22,6 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
-
   "Footer": {
     "tagline": "We build digital machines that move people. Web design, brand identity, and film — from Paris.",
     "nav": {
@@ -40,7 +38,6 @@
     "copyright": "© {year} TheCraftMachine. All rights reserved.",
     "location": "Paris, France"
   },
-
   "Hero": {
     "label": "Web Agency — Paris",
     "heading": "We build digital machines that move people.",
@@ -48,15 +45,12 @@
     "ctaPrimary": "See the work →",
     "ctaSecondary": "Start a project"
   },
-
   "PortfolioReel": {
     "cta": "Find out more →"
   },
-
   "ProjectCard": {
     "viewCaseStudy": "View {title} case study"
   },
-
   "Services": {
     "label": "What we do",
     "heading": "Every craft, under one roof",
@@ -79,7 +73,6 @@
       }
     }
   },
-
   "AboutTeaser": {
     "label": "Our journey",
     "heading": "Precision is not a style. It's a practice",
@@ -87,7 +80,6 @@
     "paragraph2": "We work across web design, brand identity, and film — because these disciplines inform each other. A brand built in isolation from its digital presence is half a brand.",
     "cta": "Read our story →"
   },
-
   "Testimonials": {
     "label": "Client reviews",
     "heading": "From the people who matter",
@@ -113,7 +105,6 @@
       }
     ]
   },
-
   "ContactCTA": {
     "label": "Start a project",
     "heading": "Something worth building? Let's talk",
@@ -121,12 +112,10 @@
     "ctaPrimary": "Start a project →",
     "ctaSecondary": "See the work"
   },
-
   "ScrollVideo": {
     "heading": "Built frame by frame.",
     "paragraph": "Every project delivered with the same obsession as the first."
   },
-
   "AboutPage": {
     "label": "Our journey",
     "heading": "Seven years building things worth building",
@@ -158,7 +147,6 @@
     "ctaPrimary": "Start a project →",
     "ctaSecondary": "See the work"
   },
-
   "ContactPage": {
     "label": "Get in touch",
     "heading": "Tell us what you're working on",
@@ -183,12 +171,10 @@
       "paragraph": "We will be in touch within one working day."
     }
   },
-
   "WorkPage": {
     "label": "Selected work",
     "heading": "Projects we're proud of"
   },
-
   "CaseStudy": {
     "clientLabel": "Client",
     "categoryLabel": "Category",
@@ -197,43 +183,65 @@
     "nextProject": "Next project",
     "imageAlt": "{title} — full view"
   },
-
   "Projects": {
     "maison-verdier": {
       "category": "Web Design",
       "summary": "E-commerce experience for a Parisian fine-jewellery atelier.",
       "description": "A considered digital presence for a jewellery house that has been crafting in Paris for three generations. We rebuilt their e-commerce from the ground up — focusing on the slow reveal of each piece, editorial storytelling, and a checkout experience that matches the weight of the purchase.",
-      "tags": ["web", "e-commerce", "editorial"]
+      "tags": [
+        "web",
+        "e-commerce",
+        "editorial"
+      ]
     },
     "atelier-brun": {
       "category": "Branding",
       "summary": "Brand identity for an independent Parisian architecture studio.",
       "description": "Atelier Brun needed an identity as precise as their drawings. We built a mark, a typeface pairing, and a visual language that reads with the same rigour as the buildings they design.",
-      "tags": ["branding", "identity", "print"]
+      "tags": [
+        "branding",
+        "identity",
+        "print"
+      ]
     },
     "collectif-nord": {
       "category": "Videography",
       "summary": "Campaign films for a northern French cultural foundation.",
       "description": "Three short films documenting the communities behind three of the foundation's flagship programmes. Shot on location across Lille, Roubaix, and Tourcoing — warm, unfussy, honest.",
-      "tags": ["videography", "documentary", "campaign"]
+      "tags": [
+        "videography",
+        "documentary",
+        "campaign"
+      ]
     },
     "studio-leo": {
       "category": "Web Design",
       "summary": "Portfolio site for a multidisciplinary creative studio.",
       "description": "Studio Léo's work spans furniture, lighting, and installation. Their site needed to hold all three without hierarchy — a grid that breathes.",
-      "tags": ["web", "portfolio"]
+      "tags": [
+        "web",
+        "portfolio"
+      ]
     },
     "brasserie-cent": {
       "category": "Branding",
       "summary": "Full brand identity for a craft brewery in Bordeaux.",
       "description": "From name through label design to tap handle — a complete brand for a new brewery that wanted to feel like it had been there for thirty years.",
-      "tags": ["branding", "packaging", "identity"]
+      "tags": [
+        "branding",
+        "packaging",
+        "identity"
+      ]
     },
     "fondation-maret": {
       "category": "Web Design",
       "summary": "Digital archive and public-facing site for an art foundation.",
       "description": "The foundation holds over 4,000 works and needed a site that could serve both researchers and first-time visitors. We built a dual-mode interface — deep search for scholars, curated paths for everyone else.",
-      "tags": ["web", "archive", "accessibility"]
+      "tags": [
+        "web",
+        "archive",
+        "accessibility"
+      ]
     }
   }
 }

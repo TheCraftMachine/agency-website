@@ -1,7 +1,7 @@
 {
   "Meta": {
     "site": {
-      "title": "TheCraftMachine — Agence Web",
+      "title": "TheCraftMachine",
       "description": "Nous construisons des machines numériques qui touchent les gens. Web design, identité de marque et film, depuis Paris."
     },
     "about": {
@@ -13,7 +13,6 @@
       "description": "Projets de web design, identité de marque et film par TheCraftMachine."
     }
   },
-
   "Nav": {
     "homeAriaLabel": "Accueil TheCraftMachine",
     "primaryAriaLabel": "Navigation principale",
@@ -23,7 +22,6 @@
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu"
   },
-
   "Footer": {
     "tagline": "Nous construisons des machines numériques qui touchent les gens. Web design, identité de marque et film — depuis Paris.",
     "nav": {
@@ -40,7 +38,6 @@
     "copyright": "© {year} TheCraftMachine. Tous droits réservés.",
     "location": "Paris, France"
   },
-
   "Hero": {
     "label": "Agence Web — Paris",
     "heading": "Nous façonnons des machines digitales qui marquent.",
@@ -48,15 +45,12 @@
     "ctaPrimary": "Voir nos projets →",
     "ctaSecondary": "Démarrer un projet"
   },
-
   "PortfolioReel": {
     "cta": "En savoir plus →"
   },
-
   "ProjectCard": {
     "viewCaseStudy": "Voir l'étude de cas {title}"
   },
-
   "Services": {
     "label": "Ce qu'on fait",
     "heading": "Chaque discipline, sous un même toit",
@@ -79,7 +73,6 @@
       }
     }
   },
-
   "AboutTeaser": {
     "label": "Notre histoire",
     "heading": "La précision n'est pas un style. C'est une pratique.",
@@ -87,7 +80,6 @@
     "paragraph2": "Nous travaillons dans le web design, l'identité de marque et le film — parce que ces disciplines se nourrissent mutuellement. Une marque construite sans lien avec sa présence numérique n'est qu'une demi-marque.",
     "cta": "Lire notre histoire →"
   },
-
   "Testimonials": {
     "label": "Avis clients",
     "heading": "De ceux qui comptent",
@@ -113,7 +105,6 @@
       }
     ]
   },
-
   "ContactCTA": {
     "label": "Démarrer un projet",
     "heading": "Un projet qui vaut la peine ? Parlons-en.",
@@ -121,12 +112,10 @@
     "ctaPrimary": "Démarrer un projet →",
     "ctaSecondary": "Voir nos projets"
   },
-
   "ScrollVideo": {
     "heading": "Construit image par image.",
     "paragraph": "Chaque projet livré avec la même obsession que le premier."
   },
-
   "AboutPage": {
     "label": "Notre histoire",
     "heading": "Sept ans à construire des choses qui en valent la peine",
@@ -158,7 +147,6 @@
     "ctaPrimary": "Démarrer un projet →",
     "ctaSecondary": "Voir nos projets"
   },
-
   "ContactPage": {
     "label": "Prendre contact",
     "heading": "Parlez-nous de votre projet",
@@ -183,12 +171,10 @@
       "paragraph": "Nous vous contacterons sous un jour ouvré."
     }
   },
-
   "WorkPage": {
     "label": "Travaux sélectionnés",
     "heading": "Des projets dont nous sommes fiers"
   },
-
   "CaseStudy": {
     "clientLabel": "Client",
     "categoryLabel": "Catégorie",
@@ -197,43 +183,65 @@
     "nextProject": "Projet suivant",
     "imageAlt": "{title} — vue complète"
   },
-
   "Projects": {
     "maison-verdier": {
       "category": "Web Design",
       "summary": "Expérience e-commerce pour un atelier parisien de joaillerie fine.",
       "description": "Une présence numérique soignée pour une maison de joaillerie qui crée à Paris depuis trois générations. Nous avons reconstruit leur e-commerce de zéro — en mettant l'accent sur la révélation lente de chaque pièce, le storytelling éditorial et une expérience d'achat à la hauteur du geste.",
-      "tags": ["web", "e-commerce", "éditorial"]
+      "tags": [
+        "web",
+        "e-commerce",
+        "éditorial"
+      ]
     },
     "atelier-brun": {
       "category": "Branding",
       "summary": "Identité de marque pour un studio d'architecture parisien indépendant.",
       "description": "Atelier Brun avait besoin d'une identité aussi précise que leurs dessins. Nous avons construit un signe, un accord typographique et un langage visuel qui se lit avec la même rigueur que les bâtiments qu'ils conçoivent.",
-      "tags": ["branding", "identité", "print"]
+      "tags": [
+        "branding",
+        "identité",
+        "print"
+      ]
     },
     "collectif-nord": {
       "category": "Vidéo",
       "summary": "Films de campagne pour une fondation culturelle du nord de la France.",
       "description": "Trois courts-métrages documentant les communautés derrière trois des programmes phares de la fondation. Tournés sur place à Lille, Roubaix et Tourcoing — chaleureux, sans fioriture, honnêtes.",
-      "tags": ["vidéo", "documentaire", "campagne"]
+      "tags": [
+        "vidéo",
+        "documentaire",
+        "campagne"
+      ]
     },
     "studio-leo": {
       "category": "Web Design",
       "summary": "Site portfolio pour un studio créatif pluridisciplinaire.",
       "description": "Le travail de Studio Léo couvre le mobilier, l'éclairage et l'installation. Leur site devait tout contenir sans hiérarchie — une grille qui respire.",
-      "tags": ["web", "portfolio"]
+      "tags": [
+        "web",
+        "portfolio"
+      ]
     },
     "brasserie-cent": {
       "category": "Branding",
       "summary": "Identité de marque complète pour une brasserie artisanale à Bordeaux.",
       "description": "Du nom à la conception des étiquettes en passant par les robinets — une marque complète pour une nouvelle brasserie qui voulait avoir l'air d'exister depuis trente ans.",
-      "tags": ["branding", "packaging", "identité"]
+      "tags": [
+        "branding",
+        "packaging",
+        "identité"
+      ]
     },
     "fondation-maret": {
       "category": "Web Design",
       "summary": "Archives numériques et site public pour une fondation d'art.",
       "description": "La fondation détient plus de 4 000 œuvres et avait besoin d'un site capable de servir à la fois les chercheurs et les nouveaux visiteurs. Nous avons construit une interface à double mode — recherche approfondie pour les spécialistes, parcours guidés pour tous les autres.",
-      "tags": ["web", "archives", "accessibilité"]
+      "tags": [
+        "web",
+        "archives",
+        "accessibilité"
+      ]
     }
   }
 }
