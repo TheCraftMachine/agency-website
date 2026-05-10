@@ -1,9 +1,12 @@
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { RevealText } from '@/components/common/reveal-text';
 import { RevealBlock } from '@/components/common/reveal-block';
 import { AccentDot } from '@/components/common/accent-dot';
 
 export function AboutTeaser() {
+  const t = useTranslations('AboutTeaser');
+
   return (
     <section
       data-bg="#18120D"
@@ -30,7 +33,7 @@ export function AboutTeaser() {
               display:       'block',
               marginBottom:  'var(--space-5)',
             }}>
-              Our journey
+              {t('label')}
             </span>
             <RevealText>
               <h2 style={{
@@ -40,7 +43,7 @@ export function AboutTeaser() {
                 letterSpacing: 'var(--tracking-tight)',
                 lineHeight:    'var(--leading-tight)',
               }}>
-                Precision is not a style. It&apos;s a practice <AccentDot style={{ marginLeft: '0.1em' }} />
+                {t('heading')} <AccentDot style={{ marginLeft: '0.1em' }} />
               </h2>
             </RevealText>
           </div>
@@ -52,7 +55,7 @@ export function AboutTeaser() {
               color:        'var(--text-muted-inv)',
               marginBottom: 'var(--space-7)',
             }}>
-              TheCraftMachine started as a two-person studio in a Paris arrondissement with good light and bad Wi-Fi. Seven years later we are still small by design — a tight team of specialists who share an obsession with the details most agencies cut to make margin.
+              {t('paragraph1')}
             </p>
             <p style={{
               fontSize:     'var(--text-base)',
@@ -60,7 +63,7 @@ export function AboutTeaser() {
               color:        'var(--text-muted-inv)',
               marginBottom: 'var(--space-8)',
             }}>
-              We work across web design, brand identity, and film — because these disciplines inform each other. A brand built in isolation from its digital presence is half a brand.
+              {t('paragraph2')}
             </p>
             <Link
               href="/about"
@@ -82,7 +85,7 @@ export function AboutTeaser() {
               }}
               className="hover:border-[--primary-light] hover:text-[--primary-light]"
             >
-              Read our story →
+              {t('cta')}
             </Link>
           </RevealBlock>
 

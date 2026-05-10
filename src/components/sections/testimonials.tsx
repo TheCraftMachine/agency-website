@@ -1,12 +1,16 @@
 'use client';
 import { useState } from 'react';
-import { testimonials } from '@/data/services';
+import { useTranslations } from 'next-intl';
 import { AccentDot } from '@/components/common/accent-dot';
 import { RevealBlock } from '@/components/common/reveal-block';
 
+type TestimonialItem = { quote: string; author: string; role: string; company: string };
+
 export function Testimonials() {
+  const t = useTranslations('Testimonials');
+  const items = t.raw('items') as TestimonialItem[];
   const [active, setActive] = useState(0);
-  const current = testimonials[active];
+  const current = items[active];
 
   return (
     <section
@@ -33,7 +37,7 @@ export function Testimonials() {
             display:       'block',
             marginBottom:  'var(--space-5)',
           }}>
-            Client reviews
+            {t('label')}
           </span>
           <h2 style={{
             fontFamily:    'var(--font-display)',
@@ -42,7 +46,7 @@ export function Testimonials() {
             letterSpacing: 'var(--tracking-tight)',
             lineHeight:    'var(--leading-tight)',
           }}>
-            From the people who matter <AccentDot style={{ marginLeft: '0.1em' }} />
+            {t('heading')} <AccentDot style={{ marginLeft: '0.1em' }} />
           </h2>
         </div>
 
@@ -75,12 +79,11 @@ export function Testimonials() {
           </blockquote>
         </RevealBlock>
 
-        {/* Navigation dots */}
         <div style={{ display: 'flex', gap: 'var(--space-3)', alignItems: 'center' }}>
-          {testimonials.map((_, i) => (
+          {items.map((_, i) => (
             <button
               key={i}
-              aria-label={`View testimonial ${i + 1}`}
+              aria-label={t('viewTestimonial', { number: i + 1 })}
               onClick={() => setActive(i)}
               style={{
                 width:        i === active ? '32px' : '8px',

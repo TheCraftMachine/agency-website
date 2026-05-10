@@ -1,0 +1,239 @@
+{
+  "Meta": {
+    "site": {
+      "title": "TheCraftMachine — Web Agency",
+      "description": "We build digital machines that move people. Web design, brand identity, and film from Paris."
+    },
+    "about": {
+      "title": "Our Journey — TheCraftMachine",
+      "description": "Seven years of building digital things worth building."
+    },
+    "work": {
+      "title": "Work — TheCraftMachine",
+      "description": "Web design, brand identity, and film projects by TheCraftMachine."
+    }
+  },
+
+  "Nav": {
+    "homeAriaLabel": "TheCraftMachine home",
+    "primaryAriaLabel": "Primary",
+    "whatWeDo": "What We Do",
+    "ourJourney": "Our Journey",
+    "cta": "Take the Next Step",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+
+  "Footer": {
+    "tagline": "We build digital machines that move people. Web design, brand identity, and film — from Paris.",
+    "nav": {
+      "workHeading": "Work",
+      "allProjects": "All Projects",
+      "webDesign": "Web Design",
+      "branding": "Branding",
+      "film": "Film",
+      "agencyHeading": "Agency",
+      "ourJourney": "Our Journey",
+      "clients": "Clients",
+      "contact": "Contact"
+    },
+    "copyright": "© {year} TheCraftMachine. All rights reserved.",
+    "location": "Paris, France"
+  },
+
+  "Hero": {
+    "label": "Web Agency — Paris",
+    "heading": "We build <img1/> digital machines<br/>that move <img2/> people.",
+    "description": "From strategy to screen — every decision made with the precision of a craftsman.",
+    "ctaPrimary": "See the work →",
+    "ctaSecondary": "Start a project"
+  },
+
+  "PortfolioReel": {
+    "cta": "Find out more →"
+  },
+
+  "ProjectCard": {
+    "viewCaseStudy": "View {title} case study"
+  },
+
+  "Services": {
+    "label": "What we do",
+    "heading": "Every craft, under one roof",
+    "items": {
+      "web": {
+        "title": "Web Design & Build",
+        "description": "From information architecture to the last animation — sites that load fast, read clearly, and perform exactly as the brief demands."
+      },
+      "branding": {
+        "title": "Brand Identity",
+        "description": "Mark, colour, type, and voice. A system that holds together whether it's on a screen, a label, or a business card."
+      },
+      "video": {
+        "title": "Film & Motion",
+        "description": "Campaign films, product reels, and motion identity. Shot and edited in-house, finished with the same craft as everything else we make."
+      },
+      "strategy": {
+        "title": "Digital Strategy",
+        "description": "Audience mapping, channel planning, and conversion architecture — the thinking that makes the making worth doing."
+      }
+    }
+  },
+
+  "AboutTeaser": {
+    "label": "Our journey",
+    "heading": "Precision is not a style. It's a practice",
+    "paragraph1": "TheCraftMachine started as a two-person studio in a Paris arrondissement with good light and bad Wi-Fi. Seven years later we are still small by design — a tight team of specialists who share an obsession with the details most agencies cut to make margin.",
+    "paragraph2": "We work across web design, brand identity, and film — because these disciplines inform each other. A brand built in isolation from its digital presence is half a brand.",
+    "cta": "Read our story →"
+  },
+
+  "Testimonials": {
+    "label": "Client reviews",
+    "heading": "From the people who matter",
+    "viewTestimonial": "View testimonial {number}",
+    "items": [
+      {
+        "quote": "They asked better questions in the first meeting than any agency we'd worked with before. The site they delivered doubled our time-on-page within a month.",
+        "author": "Sophie Verdier",
+        "role": "Creative Director",
+        "company": "Maison Verdier"
+      },
+      {
+        "quote": "The identity felt inevitable — like it had always existed. That's the hardest thing to achieve and they made it look effortless.",
+        "author": "Marc Brun",
+        "role": "Founding Partner",
+        "company": "Atelier Brun"
+      },
+      {
+        "quote": "Every decision was explained, every timeline was met. Rare to find a team that is as organised as they are creative.",
+        "author": "Isabelle Morel",
+        "role": "Programme Director",
+        "company": "Collectif Nord"
+      }
+    ]
+  },
+
+  "ContactCTA": {
+    "label": "Start a project",
+    "heading": "Something worth building? Let's talk",
+    "paragraph": "Tell us what you're working on. We respond to every enquiry within one working day.",
+    "ctaPrimary": "Start a project →",
+    "ctaSecondary": "See the work"
+  },
+
+  "ScrollVideo": {
+    "heading": "Built frame by frame.",
+    "paragraph": "Every project delivered with the same obsession as the first."
+  },
+
+  "AboutPage": {
+    "label": "Our journey",
+    "heading": "Seven years building things worth building",
+    "intro": "TheCraftMachine started as a two-person studio in a Paris arrondissement with good light and bad Wi-Fi. We had one principle: do fewer things, but do them properly. Seven years later, that principle still shapes every decision we make.",
+    "story1": "We work across web design, brand identity, and film — because these disciplines inform each other. A brand built in isolation from its digital presence is half a brand. A website built without a clear brand foundation is just a collection of pages.",
+    "story2": "Our team is deliberately small. We are not a full-service agency with departments and account managers. We are a studio of specialists — each one the best we could find — who work closely together on every project. When you work with us, you work with the people doing the work.",
+    "story3": "We choose our clients as carefully as they choose us. We are not a good fit for every project — and we will tell you that upfront. When we do take a project on, it is because we believe we can do something exceptional with it.",
+    "story4": "Most of our new work comes through existing clients and referrals. That is not something we engineer — it is the natural result of the work we do and how we do it.",
+    "valuesHeading": "How we work",
+    "values": [
+      {
+        "title": "Craft over output",
+        "body": "We do fewer projects than most agencies. Intentionally. Every project gets our full attention — not a fraction of it."
+      },
+      {
+        "title": "Discipline first",
+        "body": "We ask hard questions before we open design software. The strategy informs the aesthetic, not the other way around."
+      },
+      {
+        "title": "Long-term clients",
+        "body": "We are not a transactional studio. Most of our clients have been with us for years — they trust us with the decisions that matter."
+      },
+      {
+        "title": "Transparent process",
+        "body": "No black boxes. Clients are involved at every stage, every decision is explained, and nothing ships without shared understanding."
+      }
+    ],
+    "ctaHeading": "Ready to build something?",
+    "ctaPrimary": "Start a project →",
+    "ctaSecondary": "See the work"
+  },
+
+  "ContactPage": {
+    "label": "Get in touch",
+    "heading": "Tell us what you're working on",
+    "paragraph": "We respond to every enquiry within one working day. If the project is a good fit, we will schedule a call to understand more.",
+    "emailLabel": "Email",
+    "email": "hello@thecraftmachine.fr",
+    "basedInLabel": "Based in",
+    "location": "Paris, France",
+    "responseTimeLabel": "Response time",
+    "responseTime": "Within one working day",
+    "form": {
+      "nameLabel": "Your name",
+      "emailLabel": "Email address",
+      "companyLabel": "Company",
+      "projectLabel": "Your project",
+      "projectPlaceholder": "Tell us about the project — what you're building, what success looks like, and your timeline.",
+      "submit": "Send message →",
+      "submitting": "Sending…"
+    },
+    "success": {
+      "heading": "Message received.",
+      "paragraph": "We will be in touch within one working day."
+    }
+  },
+
+  "WorkPage": {
+    "label": "Selected work",
+    "heading": "Projects we're proud of"
+  },
+
+  "CaseStudy": {
+    "clientLabel": "Client",
+    "categoryLabel": "Category",
+    "yearLabel": "Year",
+    "tagsLabel": "Tags",
+    "nextProject": "Next project",
+    "imageAlt": "{title} — full view"
+  },
+
+  "Projects": {
+    "maison-verdier": {
+      "category": "Web Design",
+      "summary": "E-commerce experience for a Parisian fine-jewellery atelier.",
+      "description": "A considered digital presence for a jewellery house that has been crafting in Paris for three generations. We rebuilt their e-commerce from the ground up — focusing on the slow reveal of each piece, editorial storytelling, and a checkout experience that matches the weight of the purchase.",
+      "tags": ["web", "e-commerce", "editorial"]
+    },
+    "atelier-brun": {
+      "category": "Branding",
+      "summary": "Brand identity for an independent Parisian architecture studio.",
+      "description": "Atelier Brun needed an identity as precise as their drawings. We built a mark, a typeface pairing, and a visual language that reads with the same rigour as the buildings they design.",
+      "tags": ["branding", "identity", "print"]
+    },
+    "collectif-nord": {
+      "category": "Videography",
+      "summary": "Campaign films for a northern French cultural foundation.",
+      "description": "Three short films documenting the communities behind three of the foundation's flagship programmes. Shot on location across Lille, Roubaix, and Tourcoing — warm, unfussy, honest.",
+      "tags": ["videography", "documentary", "campaign"]
+    },
+    "studio-leo": {
+      "category": "Web Design",
+      "summary": "Portfolio site for a multidisciplinary creative studio.",
+      "description": "Studio Léo's work spans furniture, lighting, and installation. Their site needed to hold all three without hierarchy — a grid that breathes.",
+      "tags": ["web", "portfolio"]
+    },
+    "brasserie-cent": {
+      "category": "Branding",
+      "summary": "Full brand identity for a craft brewery in Bordeaux.",
+      "description": "From name through label design to tap handle — a complete brand for a new brewery that wanted to feel like it had been there for thirty years.",
+      "tags": ["branding", "packaging", "identity"]
+    },
+    "fondation-maret": {
+      "category": "Web Design",
+      "summary": "Digital archive and public-facing site for an art foundation.",
+      "description": "The foundation holds over 4,000 works and needed a site that could serve both researchers and first-time visitors. We built a dual-mode interface — deep search for scholars, curated paths for everyone else.",
+      "tags": ["web", "archive", "accessibility"]
+    }
+  }
+}

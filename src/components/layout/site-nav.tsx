@@ -1,15 +1,17 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 
 export function SiteNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const t = useTranslations('Nav');
 
   return (
     <>
       <nav
-        aria-label="Primary"
+        aria-label={t('primaryAriaLabel')}
         style={{
           position:        'fixed',
           insetBlockStart: 0,
@@ -25,7 +27,7 @@ export function SiteNav() {
       >
         <Link
           href="/"
-          aria-label="TheCraftMachine home"
+          aria-label={t('homeAriaLabel')}
           style={{
             fontFamily:    'var(--font-display)',
             fontSize:      'var(--text-lg)',
@@ -44,8 +46,8 @@ export function SiteNav() {
           className="hidden md:flex items-center"
           style={{ gap: 'var(--space-3)', pointerEvents: 'auto' }}
         >
-          <NavLink href="/work">What We Do</NavLink>
-          <NavLink href="/about">Our Journey</NavLink>
+          <NavLink href="/work">{t('whatWeDo')}</NavLink>
+          <NavLink href="/about">{t('ourJourney')}</NavLink>
           <Link
             href="/contact"
             style={{
@@ -67,13 +69,13 @@ export function SiteNav() {
             }}
             className="hover:bg-[--primary-hover]"
           >
-            Take the Next Step <span aria-hidden="true">→</span>
+            {t('cta')} <span aria-hidden="true">→</span>
           </Link>
         </div>
 
         {/* Mobile hamburger */}
         <button
-          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-label={mobileOpen ? t('closeMenu') : t('openMenu')}
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden"
           style={{
@@ -108,7 +110,7 @@ export function SiteNav() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <span style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-lg)', fontWeight: 700, color: '#F4EDE6' }}>TCM</span>
             <button
-              aria-label="Close menu"
+              aria-label={t('closeMenu')}
               onClick={() => setMobileOpen(false)}
               style={{ background: 'transparent', border: 'none', color: '#F4EDE6', cursor: 'pointer', fontSize: '1.25rem' }}
             >
@@ -117,9 +119,9 @@ export function SiteNav() {
           </div>
           <nav style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
             {[
-              { href: '/work',    label: 'What We Do' },
-              { href: '/about',   label: 'Our Journey' },
-              { href: '/contact', label: 'Take the Next Step' },
+              { href: '/work',    label: t('whatWeDo') },
+              { href: '/about',   label: t('ourJourney') },
+              { href: '/contact', label: t('cta') },
             ].map(({ href, label }) => (
               <Link
                 key={href}

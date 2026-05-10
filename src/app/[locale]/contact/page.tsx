@@ -1,8 +1,10 @@
 'use client';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { AccentDot } from '@/components/common/accent-dot';
 
 export default function ContactPage() {
+  const t = useTranslations('ContactPage');
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
   const [form, setForm] = useState({ name: '', email: '', company: '', message: '' });
 
@@ -12,6 +14,12 @@ export default function ContactPage() {
     await new Promise(r => setTimeout(r, 800));
     setStatus('sent');
   };
+
+  const fields = [
+    { name: 'name',    label: t('form.nameLabel'),    type: 'text',  required: true },
+    { name: 'email',   label: t('form.emailLabel'),   type: 'email', required: true },
+    { name: 'company', label: t('form.companyLabel'), type: 'text',  required: false },
+  ] as const;
 
   return (
     <div style={{ background: 'var(--surface-dark)', color: 'var(--text-inverse)', minHeight: '100vh' }}>
@@ -42,7 +50,7 @@ export default function ContactPage() {
               display:       'block',
               marginBottom:  'var(--space-5)',
             }}>
-              Get in touch
+              {t('label')}
             </span>
             <h1 style={{
               fontFamily:    'var(--font-display)',
@@ -52,7 +60,7 @@ export default function ContactPage() {
               lineHeight:    'var(--leading-tight)',
               marginBottom:  'var(--space-7)',
             }}>
-              Tell us what you&apos;re working on <AccentDot style={{ marginLeft: '0.1em' }} />
+              {t('heading')} <AccentDot style={{ marginLeft: '0.1em' }} />
             </h1>
             <p style={{
               fontSize:     'var(--text-base)',
@@ -61,29 +69,29 @@ export default function ContactPage() {
               marginBottom: 'var(--space-8)',
               maxWidth:     '40ch',
             }}>
-              We respond to every enquiry within one working day. If the project is a good fit, we will schedule a call to understand more.
+              {t('paragraph')}
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-5)' }}>
               <div>
                 <p style={{ fontSize: 'var(--text-xs)', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted-inv)', marginBottom: 'var(--space-2)' }}>
-                  Email
+                  {t('emailLabel')}
                 </p>
                 <p style={{ fontSize: 'var(--text-base)', color: 'var(--primary)' }}>
-                  hello@thecraftmachine.fr
+                  {t('email')}
                 </p>
               </div>
               <div>
                 <p style={{ fontSize: 'var(--text-xs)', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted-inv)', marginBottom: 'var(--space-2)' }}>
-                  Based in
+                  {t('basedInLabel')}
                 </p>
-                <p style={{ fontSize: 'var(--text-base)' }}>Paris, France</p>
+                <p style={{ fontSize: 'var(--text-base)' }}>{t('location')}</p>
               </div>
               <div>
                 <p style={{ fontSize: 'var(--text-xs)', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted-inv)', marginBottom: 'var(--space-2)' }}>
-                  Response time
+                  {t('responseTimeLabel')}
                 </p>
-                <p style={{ fontSize: 'var(--text-base)' }}>Within one working day</p>
+                <p style={{ fontSize: 'var(--text-base)' }}>{t('responseTime')}</p>
               </div>
             </div>
           </div>
@@ -103,19 +111,15 @@ export default function ContactPage() {
                   fontWeight:    600,
                   marginBottom:  'var(--space-4)',
                 }}>
-                  Message received.
+                  {t('success.heading')}
                 </p>
                 <p style={{ color: 'var(--text-muted-inv)', fontSize: 'var(--text-base)' }}>
-                  We will be in touch within one working day.
+                  {t('success.paragraph')}
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-5)' }}>
-                {[
-                  { name: 'name',    label: 'Your name',    type: 'text',  required: true },
-                  { name: 'email',   label: 'Email address', type: 'email', required: true },
-                  { name: 'company', label: 'Company',       type: 'text',  required: false },
-                ].map(({ name, label, type, required }) => (
+                {fields.map(({ name, label, type, required }) => (
                   <div key={name}>
                     <label
                       htmlFor={name}
@@ -136,7 +140,7 @@ export default function ContactPage() {
                       name={name}
                       type={type}
                       required={required}
-                      value={form[name as keyof typeof form]}
+                      value={form[name]}
                       onChange={e => setForm(f => ({ ...f, [name]: e.target.value }))}
                       style={{
                         width:         '100%',
@@ -167,7 +171,7 @@ export default function ContactPage() {
                       marginBottom:  'var(--space-2)',
                     }}
                   >
-                    Your project <span aria-hidden="true" style={{ color: 'var(--primary)' }}>*</span>
+                    {t('form.projectLabel')} <span aria-hidden="true" style={{ color: 'var(--primary)' }}>*</span>
                   </label>
                   <textarea
                     id="message"
@@ -176,7 +180,7 @@ export default function ContactPage() {
                     rows={6}
                     value={form.message}
                     onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
-                    placeholder="Tell us about the project — what you're building, what success looks like, and your timeline."
+                    placeholder={t('form.projectPlaceholder')}
                     style={{
                       width:         '100%',
                       padding:       'var(--space-4)',
@@ -215,7 +219,7 @@ export default function ContactPage() {
                     transition:     'background 200ms',
                   }}
                 >
-                  {status === 'sending' ? 'Sending…' : 'Send message →'}
+                  {status === 'sending' ? t('form.submitting') : t('form.submit')}
                 </button>
               </form>
             )}

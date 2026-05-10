@@ -1,9 +1,12 @@
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { RevealText } from '@/components/common/reveal-text';
 import { RevealBlock } from '@/components/common/reveal-block';
 import { AccentDot } from '@/components/common/accent-dot';
 
 export function ContactCTA() {
+  const t = useTranslations('ContactCTA');
+
   return (
     <section
       data-bg="#18120D"
@@ -27,7 +30,7 @@ export function ContactCTA() {
           display:       'block',
           marginBottom:  'var(--space-5)',
         }}>
-          Start a project
+          {t('label')}
         </span>
 
         <RevealText>
@@ -40,7 +43,7 @@ export function ContactCTA() {
             marginBottom:  'var(--space-8)',
             maxWidth:      '16ch',
           }}>
-            Something worth building? Let&apos;s talk <AccentDot style={{ marginLeft: '0.1em' }} />
+            {t('heading')} <AccentDot style={{ marginLeft: '0.1em' }} />
           </h2>
         </RevealText>
 
@@ -52,7 +55,7 @@ export function ContactCTA() {
             maxWidth:     '44ch',
             marginBottom: 'var(--space-8)',
           }}>
-            Tell us what you&apos;re working on. We respond to every enquiry within one working day.
+            {t('paragraph')}
           </p>
 
           <div style={{ display: 'flex', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
@@ -76,7 +79,7 @@ export function ContactCTA() {
               }}
               className="hover:bg-[--primary-hover]"
             >
-              Start a project →
+              {t('ctaPrimary')}
             </Link>
             <Link
               href="/work"
@@ -99,7 +102,7 @@ export function ContactCTA() {
               }}
               className="hover:border-[--primary-light] hover:text-[--primary-light]"
             >
-              See the work
+              {t('ctaSecondary')}
             </Link>
           </div>
         </RevealBlock>

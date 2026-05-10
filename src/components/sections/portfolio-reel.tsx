@@ -2,11 +2,14 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { featuredProjects } from '@/data/projects';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import { gsap } from '@/lib/gsap';
 
 export function PortfolioReel() {
+  const t         = useTranslations('PortfolioReel');
+  const tProjects = useTranslations('Projects');
   const outerRef  = useRef<HTMLElement>(null);
   const stickyRef = useRef<HTMLDivElement>(null);
   const reduced   = useReducedMotion();
@@ -111,7 +114,7 @@ export function PortfolioReel() {
                   display:       'block',
                   marginBottom:  'var(--space-3)',
                 }}>
-                  {project.category}
+                  {tProjects(`${project.slug}.category`)}
                 </span>
 
                 <h3 style={{
@@ -133,7 +136,7 @@ export function PortfolioReel() {
                   marginBottom: 'var(--space-6)',
                   maxWidth:     '520px',
                 }}>
-                  {project.summary}
+                  {tProjects(`${project.slug}.summary`)}
                 </p>
 
                 <Link
@@ -156,7 +159,7 @@ export function PortfolioReel() {
                   }}
                   className="hover:border-[--primary] hover:text-[--primary]"
                 >
-                  Find out more →
+                  {t('cta')}
                 </Link>
               </div>
 

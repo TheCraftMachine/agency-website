@@ -34,7 +34,7 @@ export function Hero() {
             marginBottom: 'var(--space-5)',
           }}
         >
-          Web Agency — Paris
+          {t('label')}
         </span>
 
         <h1
@@ -49,55 +49,45 @@ export function Hero() {
             overflowWrap: 'break-word',
           }}
         >
-          We build{' '}
-          <span
-            aria-hidden="true"
-            style={{
-              display: 'inline-block',
-              width: 'clamp(80px, 11vw, 156px)',
-              height: 'clamp(48px, 6.5vw, 96px)',
-              borderRadius: 'var(--radius-md)',
-              overflow: 'hidden',
-              verticalAlign: 'middle',
-              marginInline: '0.15em',
-              transform: 'translateY(-0.08em)',
-              position: 'relative',
-            }}
-          >
-            <Image
-              src="/images/hero-thumb-1.jpg"
-              alt=""
-              fill
-              sizes="(max-width: 768px) 80px, 156px"
-              className="object-cover"
-            />
-          </span>
-          {' '}digital machines
-          <br />
-          that move{' '}
-          <span
-            aria-hidden="true"
-            style={{
-              display: 'inline-block',
-              width: 'clamp(80px, 11vw, 156px)',
-              height: 'clamp(48px, 6.5vw, 96px)',
-              borderRadius: 'var(--radius-md)',
-              overflow: 'hidden',
-              verticalAlign: 'middle',
-              marginInline: '0.15em',
-              transform: 'translateY(-0.08em)',
-              position: 'relative',
-            }}
-          >
-            <Image
-              src="/images/hero-thumb-2.jpg"
-              alt=""
-              fill
-              sizes="(max-width: 768px) 80px, 156px"
-              className="object-cover"
-            />
-          </span>
-          {' '}people.
+          {t.rich('heading', {
+            img1: () => (
+              <span
+                aria-hidden="true"
+                style={{
+                  display: 'inline-block',
+                  width: 'clamp(80px, 11vw, 156px)',
+                  height: 'clamp(48px, 6.5vw, 96px)',
+                  borderRadius: 'var(--radius-md)',
+                  overflow: 'hidden',
+                  verticalAlign: 'middle',
+                  marginInline: '0.15em',
+                  transform: 'translateY(-0.08em)',
+                  position: 'relative',
+                }}
+              >
+                <Image src="/images/hero-thumb-1.jpg" alt="" fill sizes="(max-width: 768px) 80px, 156px" className="object-cover" />
+              </span>
+            ),
+            img2: () => (
+              <span
+                aria-hidden="true"
+                style={{
+                  display: 'inline-block',
+                  width: 'clamp(80px, 11vw, 156px)',
+                  height: 'clamp(48px, 6.5vw, 96px)',
+                  borderRadius: 'var(--radius-md)',
+                  overflow: 'hidden',
+                  verticalAlign: 'middle',
+                  marginInline: '0.15em',
+                  transform: 'translateY(-0.08em)',
+                  position: 'relative',
+                }}
+              >
+                <Image src="/images/hero-thumb-2.jpg" alt="" fill sizes="(max-width: 768px) 80px, 156px" className="object-cover" />
+              </span>
+            ),
+            br: () => <br />,
+          })}
         </h1>
 
         <p
@@ -137,7 +127,7 @@ export function Hero() {
             }}
             className="hover:bg-[--primary-hover]"
           >
-            See the work →
+            {t('ctaPrimary')}
           </Link>
           <Link
             href="/contact"
@@ -160,7 +150,7 @@ export function Hero() {
             }}
             className="hover:border-[--primary] hover:text-[--primary]"
           >
-            Start a project
+            {t('ctaSecondary')}
           </Link>
         </div>
 

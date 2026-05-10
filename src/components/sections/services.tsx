@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import { RevealText } from '@/components/common/reveal-text';
 import { RevealBlock } from '@/components/common/reveal-block';
 import { AccentDot } from '@/components/common/accent-dot';
@@ -5,6 +6,8 @@ import { Separator } from '@/components/ui/separator';
 import { services } from '@/data/services';
 
 export function Services() {
+  const t = useTranslations('Services');
+
   return (
     <section
       data-bg="#F4EDE6"
@@ -29,7 +32,7 @@ export function Services() {
             display:       'block',
             marginBottom:  'var(--space-5)',
           }}>
-            What we do
+            {t('label')}
           </span>
           <RevealText>
             <h2 style={{
@@ -40,7 +43,7 @@ export function Services() {
               lineHeight:    'var(--leading-tight)',
               maxWidth:      '14ch',
             }}>
-              Every craft, under one roof <AccentDot style={{ marginLeft: '0.1em' }} />
+              {t('heading')} <AccentDot style={{ marginLeft: '0.1em' }} />
             </h2>
           </RevealText>
         </div>
@@ -69,7 +72,7 @@ export function Services() {
                   lineHeight:    'var(--leading-snug)',
                   marginBottom:  'var(--space-4)',
                 }}>
-                  {service.title}
+                  {t(`items.${service.id}.title`)}
                 </h3>
                 <p style={{
                   fontSize:   'var(--text-base)',
@@ -77,7 +80,7 @@ export function Services() {
                   color:      'var(--text-secondary)',
                   maxWidth:   '36ch',
                 }}>
-                  {service.description}
+                  {t(`items.${service.id}.description`)}
                 </p>
               </div>
             </RevealBlock>

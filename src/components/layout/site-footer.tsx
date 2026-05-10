@@ -1,7 +1,10 @@
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { Separator } from '@/components/ui/separator';
 
 export function SiteFooter() {
+  const t = useTranslations('Footer');
+
   return (
     <footer
       data-bg="#18120D"
@@ -27,23 +30,27 @@ export function SiteFooter() {
               TCM
             </p>
             <p style={{ color: 'var(--text-muted-inv)', maxWidth: '28ch', lineHeight: 'var(--leading-normal)', fontSize: 'var(--text-sm)' }}>
-              We build digital machines that move people. Web design, brand identity, and film — from Paris.
+              {t('tagline')}
             </p>
           </div>
 
           <nav aria-label="Footer" style={{ display: 'flex', gap: 'var(--space-9)' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-              <p style={{ fontSize: 'var(--text-xs)', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted-inv)', marginBottom: 'var(--space-2)' }}>Work</p>
-              <FooterLink href="/work">All Projects</FooterLink>
-              <FooterLink href="/work?filter=web">Web Design</FooterLink>
-              <FooterLink href="/work?filter=branding">Branding</FooterLink>
-              <FooterLink href="/work?filter=video">Film</FooterLink>
+              <p style={{ fontSize: 'var(--text-xs)', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted-inv)', marginBottom: 'var(--space-2)' }}>
+                {t('nav.workHeading')}
+              </p>
+              <FooterLink href="/work">{t('nav.allProjects')}</FooterLink>
+              <FooterLink href="/work?filter=web">{t('nav.webDesign')}</FooterLink>
+              <FooterLink href="/work?filter=branding">{t('nav.branding')}</FooterLink>
+              <FooterLink href="/work?filter=video">{t('nav.film')}</FooterLink>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-              <p style={{ fontSize: 'var(--text-xs)', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted-inv)', marginBottom: 'var(--space-2)' }}>Agency</p>
-              <FooterLink href="/about">Our Journey</FooterLink>
-              <FooterLink href="/#testimonials">Clients</FooterLink>
-              <FooterLink href="/contact">Contact</FooterLink>
+              <p style={{ fontSize: 'var(--text-xs)', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted-inv)', marginBottom: 'var(--space-2)' }}>
+                {t('nav.agencyHeading')}
+              </p>
+              <FooterLink href="/about">{t('nav.ourJourney')}</FooterLink>
+              <FooterLink href="/#testimonials">{t('nav.clients')}</FooterLink>
+              <FooterLink href="/contact">{t('nav.contact')}</FooterLink>
             </div>
           </nav>
         </div>
@@ -52,10 +59,10 @@ export function SiteFooter() {
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 'var(--space-4)' }}>
           <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-muted-inv)', letterSpacing: '0.04em' }}>
-            © {new Date().getFullYear()} TheCraftMachine. All rights reserved.
+            {t('copyright', { year: new Date().getFullYear() })}
           </p>
           <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-muted-inv)' }}>
-            Paris, France
+            {t('location')}
           </p>
         </div>
       </div>

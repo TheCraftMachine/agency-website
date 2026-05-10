@@ -1,11 +1,13 @@
 'use client';
 import { useRef, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import { useScrollVideo } from '@/hooks/use-scroll-video';
 import { RevealText } from '@/components/common/reveal-text';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import { gsap } from '@/lib/gsap';
 
 export function ScrollVideo() {
+  const t          = useTranslations('ScrollVideo');
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef   = useRef<HTMLVideoElement>(null);
   const stickyRef  = useRef<HTMLDivElement>(null);
@@ -83,11 +85,11 @@ export function ScrollVideo() {
               lineHeight:    'var(--leading-tight)',
               marginBottom:  'var(--space-4)',
             }}>
-              Built frame by frame.
+              {t('heading')}
             </h2>
           </RevealText>
           <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-muted-inv)', lineHeight: 'var(--leading-normal)' }}>
-            Every project delivered with the same obsession as the first.
+            {t('paragraph')}
           </p>
         </div>
       </div>

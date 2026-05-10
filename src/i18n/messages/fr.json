@@ -1,0 +1,239 @@
+{
+  "Meta": {
+    "site": {
+      "title": "TheCraftMachine — Agence Web",
+      "description": "Nous construisons des machines numériques qui touchent les gens. Web design, identité de marque et film, depuis Paris."
+    },
+    "about": {
+      "title": "Notre Histoire — TheCraftMachine",
+      "description": "Sept ans à construire des choses qui en valent la peine."
+    },
+    "work": {
+      "title": "Travaux — TheCraftMachine",
+      "description": "Projets de web design, identité de marque et film par TheCraftMachine."
+    }
+  },
+
+  "Nav": {
+    "homeAriaLabel": "Accueil TheCraftMachine",
+    "primaryAriaLabel": "Navigation principale",
+    "whatWeDo": "Notre Métier",
+    "ourJourney": "Notre Histoire",
+    "cta": "Démarrer un projet",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
+  },
+
+  "Footer": {
+    "tagline": "Nous construisons des machines numériques qui touchent les gens. Web design, identité de marque et film — depuis Paris.",
+    "nav": {
+      "workHeading": "Travaux",
+      "allProjects": "Tous les projets",
+      "webDesign": "Web Design",
+      "branding": "Branding",
+      "film": "Film",
+      "agencyHeading": "Agence",
+      "ourJourney": "Notre Histoire",
+      "clients": "Clients",
+      "contact": "Contact"
+    },
+    "copyright": "© {year} TheCraftMachine. Tous droits réservés.",
+    "location": "Paris, France"
+  },
+
+  "Hero": {
+    "label": "Agence Web — Paris",
+    "heading": "Nous construisons <img1/> des machines<br/>numériques qui touchent <img2/> les gens.",
+    "description": "De la stratégie à l'écran : chaque décision est prise avec la précision d'un artisan.",
+    "ctaPrimary": "Voir nos projets →",
+    "ctaSecondary": "Démarrer un projet"
+  },
+
+  "PortfolioReel": {
+    "cta": "En savoir plus →"
+  },
+
+  "ProjectCard": {
+    "viewCaseStudy": "Voir l'étude de cas {title}"
+  },
+
+  "Services": {
+    "label": "Ce qu'on fait",
+    "heading": "Chaque discipline, sous un même toit",
+    "items": {
+      "web": {
+        "title": "Web Design & Développement",
+        "description": "De l'architecture de l'information à la dernière animation — des sites rapides, lisibles, et qui performent exactement comme le brief le demande."
+      },
+      "branding": {
+        "title": "Identité de Marque",
+        "description": "Signe, couleur, typographie et voix. Un système cohérent, qu'il soit sur un écran, une étiquette ou une carte de visite."
+      },
+      "video": {
+        "title": "Film & Motion",
+        "description": "Films de campagne, reels produit et motion identity. Tournés et montés en interne, finis avec le même soin que tout ce que nous faisons."
+      },
+      "strategy": {
+        "title": "Stratégie Digitale",
+        "description": "Cartographie d'audience, planification des canaux et architecture de conversion — la réflexion qui donne du sens à la création."
+      }
+    }
+  },
+
+  "AboutTeaser": {
+    "label": "Notre histoire",
+    "heading": "La précision n'est pas un style. C'est une pratique.",
+    "paragraph1": "TheCraftMachine a démarré comme un studio à deux dans un arrondissement parisien avec une bonne lumière et une mauvaise connexion. Sept ans plus tard, nous restons petits par choix — une équipe resserrée de spécialistes qui partagent une obsession pour les détails que la plupart des agences sacrifient pour préserver leurs marges.",
+    "paragraph2": "Nous travaillons dans le web design, l'identité de marque et le film — parce que ces disciplines se nourrissent mutuellement. Une marque construite sans lien avec sa présence numérique n'est qu'une demi-marque.",
+    "cta": "Lire notre histoire →"
+  },
+
+  "Testimonials": {
+    "label": "Avis clients",
+    "heading": "De ceux qui comptent",
+    "viewTestimonial": "Voir le témoignage {number}",
+    "items": [
+      {
+        "quote": "Ils ont posé de meilleures questions dès la première réunion que n'importe quelle agence avec qui nous avions travaillé. Le site livré a doublé notre temps de lecture en un mois.",
+        "author": "Sophie Verdier",
+        "role": "Directrice Créative",
+        "company": "Maison Verdier"
+      },
+      {
+        "quote": "L'identité semblait inévitable — comme si elle avait toujours existé. C'est la chose la plus difficile à réaliser, et ils ont fait paraître ça sans effort.",
+        "author": "Marc Brun",
+        "role": "Associé Fondateur",
+        "company": "Atelier Brun"
+      },
+      {
+        "quote": "Chaque décision était expliquée, chaque délai était respecté. Rare de trouver une équipe aussi organisée que créative.",
+        "author": "Isabelle Morel",
+        "role": "Directrice de Programme",
+        "company": "Collectif Nord"
+      }
+    ]
+  },
+
+  "ContactCTA": {
+    "label": "Démarrer un projet",
+    "heading": "Un projet qui vaut la peine ? Parlons-en.",
+    "paragraph": "Parlez-nous de votre projet. Nous répondons à chaque demande sous un jour ouvré.",
+    "ctaPrimary": "Démarrer un projet →",
+    "ctaSecondary": "Voir nos projets"
+  },
+
+  "ScrollVideo": {
+    "heading": "Construit image par image.",
+    "paragraph": "Chaque projet livré avec la même obsession que le premier."
+  },
+
+  "AboutPage": {
+    "label": "Notre histoire",
+    "heading": "Sept ans à construire des choses qui en valent la peine",
+    "intro": "TheCraftMachine a démarré comme un studio à deux dans un arrondissement parisien avec une bonne lumière et une mauvaise connexion. Nous avions un principe : faire moins de choses, mais les faire bien. Sept ans plus tard, ce principe guide encore chaque décision que nous prenons.",
+    "story1": "Nous travaillons dans le web design, l'identité de marque et le film — parce que ces disciplines se nourrissent mutuellement. Une marque construite sans lien avec sa présence numérique n'est qu'une demi-marque. Un site construit sans identité de marque solide n'est qu'un assemblage de pages.",
+    "story2": "Notre équipe est volontairement petite. Nous ne sommes pas une agence full-service avec des départements et des account managers. Nous sommes un studio de spécialistes — les meilleurs que nous ayons pu trouver — qui travaillent ensemble sur chaque projet. Quand vous travaillez avec nous, vous travaillez avec ceux qui font le travail.",
+    "story3": "Nous choisissons nos clients aussi soigneusement qu'ils nous choisissent. Nous ne sommes pas faits pour tous les projets — et nous le dirons ouvertement. Quand nous acceptons un projet, c'est parce que nous croyons pouvoir faire quelque chose d'exceptionnel avec lui.",
+    "story4": "La plupart de nos nouveaux projets viennent de clients existants et de recommandations. Ce n'est pas quelque chose que nous cherchons à provoquer — c'est le résultat naturel du travail que nous faisons et de la façon dont nous le faisons.",
+    "valuesHeading": "Notre façon de travailler",
+    "values": [
+      {
+        "title": "Le soin avant le volume",
+        "body": "Nous faisons moins de projets que la plupart des agences. Intentionnellement. Chaque projet reçoit toute notre attention — pas une fraction."
+      },
+      {
+        "title": "La discipline avant tout",
+        "body": "Nous posons les questions difficiles avant d'ouvrir un logiciel de design. La stratégie informe l'esthétique, pas l'inverse."
+      },
+      {
+        "title": "Des clients sur le long terme",
+        "body": "Nous ne sommes pas un studio transactionnel. La plupart de nos clients sont avec nous depuis des années — ils nous font confiance pour les décisions qui comptent."
+      },
+      {
+        "title": "Un processus transparent",
+        "body": "Aucune boîte noire. Les clients sont impliqués à chaque étape, chaque décision est expliquée, et rien n'est livré sans compréhension partagée."
+      }
+    ],
+    "ctaHeading": "Prêt à construire quelque chose ?",
+    "ctaPrimary": "Démarrer un projet →",
+    "ctaSecondary": "Voir nos projets"
+  },
+
+  "ContactPage": {
+    "label": "Prendre contact",
+    "heading": "Parlez-nous de votre projet",
+    "paragraph": "Nous répondons à chaque demande sous un jour ouvré. Si le projet nous correspond, nous planifierons un appel pour en savoir plus.",
+    "emailLabel": "Email",
+    "email": "hello@thecraftmachine.fr",
+    "basedInLabel": "Basé à",
+    "location": "Paris, France",
+    "responseTimeLabel": "Délai de réponse",
+    "responseTime": "Sous un jour ouvré",
+    "form": {
+      "nameLabel": "Votre nom",
+      "emailLabel": "Adresse email",
+      "companyLabel": "Entreprise",
+      "projectLabel": "Votre projet",
+      "projectPlaceholder": "Parlez-nous du projet — ce que vous construisez, à quoi ressemble le succès, et vos délais.",
+      "submit": "Envoyer le message →",
+      "submitting": "Envoi en cours…"
+    },
+    "success": {
+      "heading": "Message reçu.",
+      "paragraph": "Nous vous contacterons sous un jour ouvré."
+    }
+  },
+
+  "WorkPage": {
+    "label": "Travaux sélectionnés",
+    "heading": "Des projets dont nous sommes fiers"
+  },
+
+  "CaseStudy": {
+    "clientLabel": "Client",
+    "categoryLabel": "Catégorie",
+    "yearLabel": "Année",
+    "tagsLabel": "Tags",
+    "nextProject": "Projet suivant",
+    "imageAlt": "{title} — vue complète"
+  },
+
+  "Projects": {
+    "maison-verdier": {
+      "category": "Web Design",
+      "summary": "Expérience e-commerce pour un atelier parisien de joaillerie fine.",
+      "description": "Une présence numérique soignée pour une maison de joaillerie qui crée à Paris depuis trois générations. Nous avons reconstruit leur e-commerce de zéro — en mettant l'accent sur la révélation lente de chaque pièce, le storytelling éditorial et une expérience d'achat à la hauteur du geste.",
+      "tags": ["web", "e-commerce", "éditorial"]
+    },
+    "atelier-brun": {
+      "category": "Branding",
+      "summary": "Identité de marque pour un studio d'architecture parisien indépendant.",
+      "description": "Atelier Brun avait besoin d'une identité aussi précise que leurs dessins. Nous avons construit un signe, un accord typographique et un langage visuel qui se lit avec la même rigueur que les bâtiments qu'ils conçoivent.",
+      "tags": ["branding", "identité", "print"]
+    },
+    "collectif-nord": {
+      "category": "Vidéo",
+      "summary": "Films de campagne pour une fondation culturelle du nord de la France.",
+      "description": "Trois courts-métrages documentant les communautés derrière trois des programmes phares de la fondation. Tournés sur place à Lille, Roubaix et Tourcoing — chaleureux, sans fioriture, honnêtes.",
+      "tags": ["vidéo", "documentaire", "campagne"]
+    },
+    "studio-leo": {
+      "category": "Web Design",
+      "summary": "Site portfolio pour un studio créatif pluridisciplinaire.",
+      "description": "Le travail de Studio Léo couvre le mobilier, l'éclairage et l'installation. Leur site devait tout contenir sans hiérarchie — une grille qui respire.",
+      "tags": ["web", "portfolio"]
+    },
+    "brasserie-cent": {
+      "category": "Branding",
+      "summary": "Identité de marque complète pour une brasserie artisanale à Bordeaux.",
+      "description": "Du nom à la conception des étiquettes en passant par les robinets — une marque complète pour une nouvelle brasserie qui voulait avoir l'air d'exister depuis trente ans.",
+      "tags": ["branding", "packaging", "identité"]
+    },
+    "fondation-maret": {
+      "category": "Web Design",
+      "summary": "Archives numériques et site public pour une fondation d'art.",
+      "description": "La fondation détient plus de 4 000 œuvres et avait besoin d'un site capable de servir à la fois les chercheurs et les nouveaux visiteurs. Nous avons construit une interface à double mode — recherche approfondie pour les spécialistes, parcours guidés pour tous les autres.",
+      "tags": ["web", "archives", "accessibilité"]
+    }
+  }
+}

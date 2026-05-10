@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import type { Project } from '@/types';
 
 interface ProjectCardProps {
@@ -7,9 +8,12 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const t         = useTranslations('ProjectCard');
+  const tProjects = useTranslations('Projects');
+
   return (
     <article className="group relative overflow-hidden rounded-[--radius-md] bg-[--surface-dark-alt] cursor-pointer">
-      <Link href={`/work/${project.slug}`} aria-label={`View ${project.title} case study`}>
+      <Link href={`/work/${project.slug}`} aria-label={t('viewCaseStudy', { title: project.title })}>
         <div className="aspect-[4/3] overflow-hidden">
           <Image
             src={project.cover}
@@ -24,7 +28,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <span
             className="font-[--font-body] text-[length:--text-xs] font-medium uppercase tracking-[0.12em] text-[--primary]"
           >
-            {project.category}
+            {tProjects(`${project.slug}.category`)}
           </span>
           <h3
             className="font-[--font-display] text-[length:--text-xl] font-semibold tracking-[--tracking-tight] text-[--text-inverse] mt-[--space-2]"
@@ -33,7 +37,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.title}
           </h3>
           <p className="text-[--text-muted-inv] text-[length:--text-sm] mt-[--space-3] line-clamp-2">
-            {project.summary}
+            {tProjects(`${project.slug}.summary`)}
           </p>
         </footer>
       </Link>

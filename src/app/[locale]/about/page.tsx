@@ -1,35 +1,27 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { AccentDot } from '@/components/common/accent-dot';
 import { RevealText } from '@/components/common/reveal-text';
 import { RevealBlock } from '@/components/common/reveal-block';
 import { ColorMorphWatcher } from '@/components/common/color-morph-watcher';
 
-export const metadata = {
-  title: 'Our Journey — TheCraftMachine',
-  description: 'Seven years of building digital things worth building.',
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Meta' });
+  return {
+    title: t('about.title'),
+    description: t('about.description'),
+  };
+}
 
-const values = [
-  {
-    title: 'Craft over output',
-    body:  'We do fewer projects than most agencies. Intentionally. Every project gets our full attention — not a fraction of it.',
-  },
-  {
-    title: 'Discipline first',
-    body:  'We ask hard questions before we open design software. The strategy informs the aesthetic, not the other way around.',
-  },
-  {
-    title: 'Long-term clients',
-    body:  'We are not a transactional studio. Most of our clients have been with us for years — they trust us with the decisions that matter.',
-  },
-  {
-    title: 'Transparent process',
-    body:  'No black boxes. Clients are involved at every stage, every decision is explained, and nothing ships without shared understanding.',
-  },
-];
+type Value = { title: string; body: string };
 
 export default function AboutPage() {
+  const t = useTranslations('AboutPage');
+  const values = t.raw('values') as Value[];
+
   return (
     <div style={{ background: 'var(--surface-dark)', color: 'var(--text-inverse)', minHeight: '100vh' }}>
 
@@ -55,7 +47,7 @@ export default function AboutPage() {
             display:       'block',
             marginBottom:  'var(--space-5)',
           }}>
-            Our journey
+            {t('label')}
           </span>
           <RevealText>
             <h1 style={{
@@ -67,7 +59,7 @@ export default function AboutPage() {
               maxWidth:      '18ch',
               marginBottom:  'var(--space-8)',
             }}>
-              Seven years building things worth building <AccentDot style={{ marginLeft: '0.1em' }} />
+              {t('heading')} <AccentDot style={{ marginLeft: '0.1em' }} />
             </h1>
           </RevealText>
           <RevealBlock>
@@ -77,7 +69,7 @@ export default function AboutPage() {
               color:      'var(--text-muted-inv)',
               maxWidth:   '58ch',
             }}>
-              TheCraftMachine started as a two-person studio in a Paris arrondissement with good light and bad Wi-Fi. We had one principle: do fewer things, but do them properly. Seven years later, that principle still shapes every decision we make.
+              {t('intro')}
             </p>
           </RevealBlock>
         </div>
@@ -103,19 +95,19 @@ export default function AboutPage() {
           }}>
             <RevealBlock>
               <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--leading-loose)', color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
-                We work across web design, brand identity, and film — because these disciplines inform each other. A brand built in isolation from its digital presence is half a brand. A website built without a clear brand foundation is just a collection of pages.
+                {t('story1')}
               </p>
               <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--leading-loose)', color: 'var(--text-secondary)' }}>
-                Our team is deliberately small. We are not a full-service agency with departments and account managers. We are a studio of specialists — each one the best we could find — who work closely together on every project. When you work with us, you work with the people doing the work.
+                {t('story2')}
               </p>
             </RevealBlock>
 
             <RevealBlock delay={0.1}>
               <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--leading-loose)', color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
-                We choose our clients as carefully as they choose us. We are not a good fit for every project — and we will tell you that upfront. When we do take a project on, it is because we believe we can do something exceptional with it.
+                {t('story3')}
               </p>
               <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--leading-loose)', color: 'var(--text-secondary)' }}>
-                Most of our new work comes through existing clients and referrals. That is not something we engineer — it is the natural result of the work we do and how we do it.
+                {t('story4')}
               </p>
             </RevealBlock>
           </div>
@@ -143,7 +135,7 @@ export default function AboutPage() {
               lineHeight:    'var(--leading-tight)',
               marginBottom:  'var(--space-9)',
             }}>
-              How we work <AccentDot style={{ marginLeft: '0.1em' }} />
+              {t('valuesHeading')} <AccentDot style={{ marginLeft: '0.1em' }} />
             </h2>
           </RevealText>
 
@@ -215,7 +207,7 @@ export default function AboutPage() {
             lineHeight:    'var(--leading-tight)',
             marginBottom:  'var(--space-7)',
           }}>
-            Ready to build something?
+            {t('ctaHeading')}
           </h2>
           <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link
@@ -237,7 +229,7 @@ export default function AboutPage() {
               }}
               className="hover:bg-[--primary-hover]"
             >
-              Start a project →
+              {t('ctaPrimary')}
             </Link>
             <Link
               href="/work"
@@ -259,7 +251,7 @@ export default function AboutPage() {
               }}
               className="hover:border-[--primary] hover:text-[--primary]"
             >
-              See the work
+              {t('ctaSecondary')}
             </Link>
           </div>
         </div>
