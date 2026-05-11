@@ -17,10 +17,15 @@ export function Hero() {
   const { hasEntered } = useEntrance();
 
   useEffect(() => {
-    if (reduced || !headingRef.current || !gearRef.current) return;
+    if (!headingRef.current || !gearRef.current) return;
 
     const heading = headingRef.current;
     const gear = gearRef.current;
+
+    if (reduced) {
+      gsap.set(heading, { clipPath: 'none' });
+      return;
+    }
 
     const ctx = gsap.context(() => {
       const headingW = heading.offsetWidth;
@@ -31,12 +36,8 @@ export function Hero() {
 
       const tl = gsap.timeline({ delay: hasEntered ? 0 : 1.2 });
 
-      // Clip-path sweeps right → reveals text left-to-right
-      tl.fromTo(
-        heading,
-        { clipPath: 'inset(0 100% 0 0)' },
-        { clipPath: 'inset(0 0% 0 0)', duration: 1.8, ease: 'power2.inOut' }
-      );
+      // Initial clip-path is already set via inline style — animate to revealed state
+      tl.to(heading, { clipPath: 'inset(0 0% 0 0)', duration: 1.8, ease: 'power2.inOut' });
 
       // Gear rolls across at the exact same pace, then fades out
       tl.to(
@@ -92,6 +93,7 @@ export function Hero() {
               lineHeight: 'var(--leading-tight)',
               letterSpacing: 'var(--tracking-tight)',
               overflowWrap: 'break-word',
+              clipPath: 'inset(0 100% 0 0)',
             }}
           >
             {t('heading')}
