@@ -2,18 +2,21 @@
 import { useEffect, useRef, useState } from 'react';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import { gsap } from '@/lib/gsap';
+import { useEntrance } from './entrance-context';
 
 export function EntranceCurtain() {
   const curtainRef = useRef<HTMLDivElement>(null);
   const logoRef    = useRef<HTMLDivElement>(null);
   const reduced    = useReducedMotion();
   const [visible, setVisible] = useState(true);
+  const { markEntered } = useEntrance();
 
   useEffect(() => {
     const curtain = curtainRef.current;
     const logo    = logoRef.current;
 
     if (reduced || !curtain || !logo) {
+      markEntered();
       setVisible(false);
       return;
     }
@@ -30,7 +33,7 @@ export function EntranceCurtain() {
         yPercent: -100,
         duration: 0.5,
         ease: 'power4.inOut',
-        onComplete: () => setVisible(false),
+        onComplete: () => { markEntered(); setVisible(false); },
       })
       .fromTo(heroReveals,
         { opacity: 0, yPercent: 5 },

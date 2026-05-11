@@ -3,6 +3,7 @@ import '../globals.css';
 import { SiteNav } from '@/components/layout/site-nav';
 import { SiteFooter } from '@/components/layout/site-footer';
 import { EntranceCurtain } from '@/components/entrance/entrance-curtain';
+import { EntranceProvider } from '@/components/entrance/entrance-context';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -39,10 +40,12 @@ export default async function RootLayout({ children, params }: { children: React
       </head>
       <body>
         <NextIntlClientProvider>
-          <EntranceCurtain />
-          <SiteNav />
-          <main>{children}</main>
-          <SiteFooter />
+          <EntranceProvider>
+            <EntranceCurtain />
+            <SiteNav />
+            <main>{children}</main>
+            <SiteFooter />
+          </EntranceProvider>
         </NextIntlClientProvider>
       </body>
     </html>

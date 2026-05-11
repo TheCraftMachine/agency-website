@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import { gsap } from '@/lib/gsap';
+import { useEntrance } from '@/components/entrance/entrance-context';
 
 const GEAR_SIZE = 200;
 
@@ -13,6 +14,7 @@ export function Hero() {
   const headingRef = useRef<HTMLHeadingElement>(null);
   const gearRef = useRef<HTMLSpanElement>(null);
   const reduced = useReducedMotion();
+  const { hasEntered } = useEntrance();
 
   useEffect(() => {
     if (reduced || !headingRef.current || !gearRef.current) return;
@@ -27,7 +29,7 @@ export function Hero() {
       // Place gear at the left boundary, vertically centred, before the reveal starts
       gsap.set(gear, { x: -gearW / 2, yPercent: -50, rotation: 0, opacity: 1 });
 
-      const tl = gsap.timeline({ delay: 1.2 });
+      const tl = gsap.timeline({ delay: hasEntered ? 0 : 1.2 });
 
       // Clip-path sweeps right → reveals text left-to-right
       tl.fromTo(
@@ -39,14 +41,14 @@ export function Hero() {
       // Gear rolls across at the exact same pace, then fades out
       tl.to(
         gear,
-        { x: headingW + gearW / 2, rotation: 720, duration: 1.8, ease: 'power2.inOut' },
+        { x: headingW - gearW / 2, rotation: 720, duration: 1.8, ease: 'power2.inOut' },
         0
       );
       tl.to(gear, { opacity: 0, duration: 0.3, ease: 'power1.out' });
     });
 
     return () => ctx.revert();
-  }, [reduced]);
+  }, [reduced, hasEntered]);
 
   return (
     <section
@@ -80,7 +82,7 @@ export function Hero() {
         </span>
 
         {/* Wrapper needed so the absolutely-positioned gear is scoped to the heading bounds */}
-        <div style={{ position: 'relative', marginBottom: 'var(--space-7)' }}>
+        <div style={{ position: 'relative', marginBottom: 'var(--space-7)', clipPath: 'inset(0)' }}>
           <h1
             ref={headingRef}
             style={{
